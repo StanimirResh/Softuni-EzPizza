@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import "./User.css"
 
-export const Login = () => {
+export const Register = () => {
     return (
         <div className="container">
             {/* <img src="https://st3.depositphotos.com/3308451/33422/i/1600/depositphotos_334221956-stock-photo-family-baby-having-pizza-party.jpg"
@@ -36,16 +36,24 @@ export const Login = () => {
                                     placeholder="password"
                                 />
                             </div>
+                            <div className="mb-3">
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="repassword"
+                                    placeholder="confirm password"
+                                />
+                            </div>
                             <div className="text-center">
                                 <button type="submit" className="btn btn-color px-5 mb-5 w-100">
                                     Login
                                 </button>
                             </div>
                             <div id="emailHelp" className="form-text text-center mb-5 text-dark">
-                                Not Registered?{" "}
-                                <Link to="/register" className="text-dark fw-bold">
+                                Already registered?{" "}
+                                <Link to="/login" className="text-dark fw-bold">
                                     {" "}
-                                    Create an Account
+                                    Login in Account
                                 </Link>
                             </div>
                         </form>
