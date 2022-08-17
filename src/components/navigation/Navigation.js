@@ -36,8 +36,8 @@ export const Navigation = () => {
                             <Link to="/" className="nav-item nav-link">
                                 Your Pizzas
                             </Link>
-                            <Link to="/" className="nav-item nav-link">
-                                Restaurants
+                            <Link to="/about" className="nav-item nav-link">
+                                About
                             </Link>
                         </div>
                     </div>
