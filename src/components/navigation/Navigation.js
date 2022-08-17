@@ -21,11 +21,8 @@ export const Navigation = () => {
                             <a href="index.html" className="nav-item nav-link active">
                                 Home
                             </a>
-                            <a href="about.html" className="nav-item nav-link">
-                                About
-                            </a>
                             <a href="product.html" className="nav-item nav-link">
-                                Product
+                                Our Pizzas
                             </a>
                         </div>
                         <a href="index.html" className="navbar-brand mx-5 d-none d-lg-block">
@@ -35,13 +32,10 @@ export const Navigation = () => {
                         </a>
                         <div className="navbar-nav mr-auto py-0">
                             <a href="service.html" className="nav-item nav-link">
-                                Service
+                                Your Pizzas
                             </a>
                             <a href="gallery.html" className="nav-item nav-link">
-                                Gallery
-                            </a>
-                            <a href="contact.html" className="nav-item nav-link">
-                                Contact
+                                Restaurants
                             </a>
                         </div>
                     </div>
