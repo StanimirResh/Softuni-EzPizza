@@ -13,7 +13,7 @@ export const Home = () => {
                                     Easy &amp; Traditional
                                 </h4>
                                 <h1 className="display-3 text-white mb-md-4">
-                                    Easy And Traditional Pizzas Since 1952
+                                    Easy And Traditional Pizzas Since 2003
                                 </h1>
                                 <Link to="/" className="btn btn-primary py-md-3 px-md-5 mt-2">
                                     Learn More
@@ -26,7 +26,7 @@ export const Home = () => {
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div className="p-3" style={{ maxWidth: 900 }}>
                                 <h4 className="text-white text-uppercase mb-md-3">
-                                    Traditional &amp; Delicious
+                                    Easy &amp; Untraditional
                                 </h4>
                                 <h1 className="display-3 text-white mb-md-4">
                                     Pizzas with YOUR own twist
