@@ -9,7 +9,12 @@ export const Login = () => {
                 className="w-100 h-100" /> */}
             <div className="row">
                 <div className="col-md-6 offset-md-3">
-                    <div className="card my-5">
+                    <div className="card my-5 ">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <h1 class="section-title position-relative text-center mb-5">Login</h1>
+                            </div>
+                        </div>
                         <form className="card-body cardbody-color p-lg-5">
                             <div className="text-center">
                                 <img

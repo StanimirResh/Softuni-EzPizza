@@ -10,6 +10,13 @@ export const Register = () => {
             <div className="row">
                 <div className="col-md-6 offset-md-3">
                     <div className="card my-5">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-6">
+                                <h1 className="section-title position-relative text-center mb-5">
+                                    Register
+                                </h1>
+                            </div>
+                        </div>
                         <form className="card-body cardbody-color p-lg-5">
                             <div className="text-center">
                                 <img

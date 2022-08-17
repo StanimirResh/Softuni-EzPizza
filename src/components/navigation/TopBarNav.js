@@ -1,21 +1,29 @@
 import { Link } from "react-router-dom"
 
 export const TopBarNav = () => {
+    const clearActivePage = () => {
+        let linkElements = document.querySelectorAll('.nav-item');
+        linkElements.forEach(x => {
+            if (x.classList.contains('active')) {
+                x.classList.remove('active')
+            }
+        })
+    }
     return (
         <div className="container-fluid bg-primary py-3 d-none d-md-block">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div className="col-md-6 text-center text-lg-left mb-2 mb-lg-0" onClick={clearActivePage}>
                         <div className="d-inline-flex align-items-center">
                             <Link className="text-white px-3" to="/login">
                                 Login
                             </Link>
                             <span className="text-white">|</span>
-                            <Link className="text-white px-3" to="/register">
+                            <Link className="text-white px-3" to="/register" onClick={clearActivePage}>
                                 Register
                             </Link>
                             <span className="text-white">|</span>
-                            <Link className="text-white px-3" to="/">
+                            <Link className="text-white px-3" to="/contacts" onClick={clearActivePage}>
                                 Contacts
                             </Link>
                         </div>

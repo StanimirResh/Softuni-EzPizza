@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export const Navigation = () => {
 
-    const clickHandler = (e) => {
+    const setActivePage = (e) => {
         let linkElements = document.querySelectorAll('.nav-item');
         linkElements.forEach(x => {
             if (x.classList.contains('active')) {
@@ -18,23 +18,23 @@ export const Navigation = () => {
                 <nav className="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
                     <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div className="navbar-nav ml-auto py-0">
-                            <Link to="/" className="nav-item nav-link active" onClick={clickHandler}>
+                            <Link to="/" className="nav-item nav-link active" onClick={setActivePage}>
                                 Home
                             </Link>
-                            <Link to="/" className="nav-item nav-link" onClick={clickHandler}>
+                            <Link to="/" className="nav-item nav-link" onClick={setActivePage}>
                                 Our Pizzas
                             </Link>
                         </div>
-                        <Link to="/" className="navbar-brand mx-5 d-none d-lg-block" onClick={clickHandler}>
+                        <Link to="/" className="navbar-brand mx-5 d-none d-lg-block" onClick={setActivePage}>
                             <h1 className="m-0 display-4 text-primary">
                                 <span className="text-secondary">EZ</span>PIZZA
                             </h1>
                         </Link>
                         <div className="navbar-nav mr-auto py-0">
-                            <Link to="/" className="nav-item nav-link" onClick={clickHandler}>
+                            <Link to="/" className="nav-item nav-link" onClick={setActivePage}>
                                 Your Pizzas
                             </Link>
-                            <Link to="/about" className="nav-item nav-link" onClick={clickHandler}>
+                            <Link to="/about" className="nav-item nav-link" onClick={setActivePage}>
                                 About
                             </Link>
                         </div>
