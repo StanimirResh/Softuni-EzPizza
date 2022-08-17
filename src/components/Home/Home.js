@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const Home = () => {
     return (
         <div className="container-fluid p-0">
@@ -13,9 +15,9 @@ export const Home = () => {
                                 <h1 className="display-3 text-white mb-md-4">
                                     Easy And Traditional Pizzas Since 1952
                                 </h1>
-                                <a href="testtest" className="btn btn-primary py-md-3 px-md-5 mt-2">
+                                <Link to="/" className="btn btn-primary py-md-3 px-md-5 mt-2">
                                     Learn More
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -29,33 +31,32 @@ export const Home = () => {
                                 <h1 className="display-3 text-white mb-md-4">
                                     Pizzas with YOUR own twist
                                 </h1>
-                                <a href="test" className="btn btn-primary py-md-3 px-md-5 mt-2">
+                                <Link to="/" className="btn btn-primary py-md-3 px-md-5 mt-2">
                                     Learn More
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a
+                <Link
                     className="carousel-control-prev"
-                    href="#header-carousel"
+                    to="/"
                     data-slide="prev"
                 >
                     <div className="btn btn-secondary px-0" style={{ width: 45, height: 45 }}>
                         <span className="carousel-control-prev-icon mb-n1" />
                     </div>
-                </a>
-                <a
+                </Link>
+                <Link
                     className="carousel-control-next"
-                    href="#header-carousel"
+                    to="/"
                     data-slide="next"
                 >
                     <div className="btn btn-secondary px-0" style={{ width: 45, height: 45 }}>
                         <span className="carousel-control-next-icon mb-n1" />
                     </div>
-                </a>
+                </Link>
             </div>
         </div>
-
     )
 }

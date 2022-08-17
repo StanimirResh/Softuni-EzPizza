@@ -1,13 +1,13 @@
 import { Home } from "../Home/Home"
-import { Navigation } from "../navigation/Navigation"
-import { TopBarNav } from "../navigation/TopBarNav"
+import { Routes, Route } from 'react-router-dom'
 
 export const Main = () => {
     return (
-        <>
-            <TopBarNav />
-            <Navigation />
-            <Home />
-        </>
+        <main>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<Home />} />
+            </Routes>
+        </main>
     )
 }
