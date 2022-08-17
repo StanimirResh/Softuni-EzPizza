@@ -7,11 +7,11 @@ export const TopBarNav = () => {
                 <div className="row">
                     <div className="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                         <div className="d-inline-flex align-items-center">
-                            <Link className="text-white px-3" to="/">
+                            <Link className="text-white px-3" to="/login">
                                 Login
                             </Link>
                             <span className="text-white">|</span>
-                            <Link className="text-white px-3" to="/">
+                            <Link className="text-white px-3" to="/register">
                                 Register
                             </Link>
                             <span className="text-white">|</span>
