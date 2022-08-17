@@ -30,25 +30,25 @@ export const Register = () => {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    id="Username"
+                                    name="username"
                                     aria-describedby="emailHelp"
-                                    placeholder="User Name"
+                                    placeholder="Your Username"
                                 />
                             </div>
                             <div className="mb-3">
                                 <input
                                     type="password"
                                     className="form-control"
-                                    id="password"
-                                    placeholder="password"
+                                    name="password"
+                                    placeholder="Your Password"
                                 />
                             </div>
                             <div className="mb-3">
                                 <input
                                     type="password"
                                     className="form-control"
-                                    id="repassword"
-                                    placeholder="confirm password"
+                                    name="repassword"
+                                    placeholder="Confirm Your Password"
                                 />
                             </div>
                             <div className="text-center">

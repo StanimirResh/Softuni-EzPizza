@@ -19,10 +19,10 @@ export const Contacts = () => {
                                         <input
                                             type="text"
                                             className="form-control p-4"
-                                            id="name"
-                                            placeholder="Your Name"
+                                            name="username"
+                                            placeholder="Your Username"
                                             required="required"
-                                            data-validation-required-message="Please enter your name"
+                                            data-validation-required-message="Please enter your username"
                                         />
                                         <p className="help-block text-danger" />
                                     </div>
@@ -30,7 +30,7 @@ export const Contacts = () => {
                                         <input
                                             type="email"
                                             className="form-control p-4"
-                                            id="email"
+                                            name="email"
                                             placeholder="Your Email"
                                             required="required"
                                             data-validation-required-message="Please enter your email"
@@ -42,7 +42,7 @@ export const Contacts = () => {
                                     <input
                                         type="text"
                                         className="form-control p-4"
-                                        id="subject"
+                                        name="subject"
                                         placeholder="Subject"
                                         required="required"
                                         data-validation-required-message="Please enter a subject"
@@ -53,7 +53,7 @@ export const Contacts = () => {
                                     <textarea
                                         className="form-control p-4"
                                         rows={6}
-                                        id="message"
+                                        name="message"
                                         placeholder="Message"
                                         required="required"
                                         data-validation-required-message="Please enter your message"
