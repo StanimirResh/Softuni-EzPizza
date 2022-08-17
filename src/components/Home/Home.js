@@ -1,4 +1,4 @@
-export const Introduction = () => {
+export const Home = () => {
     return (
         <div className="container-fluid p-0">
             <div id="header-carousel" className="carousel slide" data-ride="carousel">
