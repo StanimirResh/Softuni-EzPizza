@@ -38,24 +38,24 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
-                <Link
+                <a
                     className="carousel-control-prev"
-                    to="/"
+                    href="#header-carousel"
                     data-slide="prev"
                 >
                     <div className="btn btn-secondary px-0" style={{ width: 45, height: 45 }}>
                         <span className="carousel-control-prev-icon mb-n1" />
                     </div>
-                </Link>
-                <Link
+                </a>
+                <a
                     className="carousel-control-next"
-                    to="/"
+                    href="#header-carousel"
                     data-slide="next"
                 >
                     <div className="btn btn-secondary px-0" style={{ width: 45, height: 45 }}>
                         <span className="carousel-control-next-icon mb-n1" />
                     </div>
-                </Link>
+                </a>
             </div>
         </div>
     )
