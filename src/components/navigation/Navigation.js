@@ -21,7 +21,7 @@ export const Navigation = () => {
                             <Link to="/" className="nav-item nav-link active" onClick={setActivePage}>
                                 Home
                             </Link>
-                            <Link to="/" className="nav-item nav-link" onClick={setActivePage}>
+                            <Link to="/catalog/basic-pizzas" className="nav-item nav-link" onClick={setActivePage}>
                                 Our Pizzas
                             </Link>
                         </div>
