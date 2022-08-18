@@ -1,15 +1,16 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import * as userService from '../../services/userService'
 import "./User.css"
 
 export const Login = () => {
     const [userData, setUserData] = useState({
-        username: "",
+        email: "",
         password: ""
     })
 
     const [errors, setErrors] = useState({
-        username: false,
+        email: false,
         password: false
     })
 
@@ -36,7 +37,11 @@ export const Login = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        
+
+        userService.login(userData.email, userData.password)
+        .then(result => {
+            
+        })
     }
 
     return (
@@ -62,14 +67,14 @@ export const Login = () => {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    name="username"
+                                    name="email"
                                     aria-describedby="emailHelp"
-                                    placeholder="Your Username"
-                                    value={userData.username}
+                                    placeholder="Your Email"
+                                    value={userData.email}
                                     onChange={changeHandler}
                                     onBlur={errorHandler}
                                 />
-                                {errors.username && <p className="text-black mt-3 mb-4">Username has to be longer than 3 characters</p>}
+                                {errors.email && <p className="text-black mt-3 mb-4">Your Email has to be longer than 3 characters</p>}
                             </div>
                             <div className="mb-3">
                                 <input
@@ -90,7 +95,7 @@ export const Login = () => {
                                     id="btn"
                                     type="submit"
                                     className="btn btn-color px-5 mb-5 w-100"
-                                    disabled={(errors.username || errors.password) ? true : false}
+                                    disabled={(errors.email || errors.password) ? true : false}
                                 >
                                     Login
                                 </button>
