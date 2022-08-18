@@ -7,8 +7,10 @@ export const Details = () => {
 
     const [pizza, setPizza] = useState({});
 
+    const dbName = 'pizzas'
+
     useEffect(() => {
-        pizzaService.getOne(pizzaId)
+        pizzaService.getOne(dbName, pizzaId)
             .then(result => setPizza(result))
     })
 

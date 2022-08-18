@@ -4,9 +4,9 @@ import * as pizzaService from "../../services/pizzaService"
 
 export const BasicPizzas = () => {
     const [pizzas, setPizzas] = useState([])
-
+    const dbName = 'pizzas'
     useEffect(() => {
-        pizzaService.getAll()
+        pizzaService.getAll(dbName)
             .then(result => {
                 setPizzas(result);
             })
