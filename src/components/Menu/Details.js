@@ -1,5 +1,17 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"
+import * as pizzaService from "../../services/pizzaService"
+
 export const Details = () => {
-    
+    const { pizzaId } = useParams();
+
+    const [pizza, setPizza] = useState({});
+
+    useEffect(() => {
+        pizzaService.getOne(pizzaId)
+            .then(result => setPizza(result))
+    })
+
     return (
         <div className="container-fluid my-5 py-5 px-0">
             <div className="row bg-primary m-0">
@@ -7,19 +19,11 @@ export const Details = () => {
                     <div className="position-relative h-100">
                         <img
                             className="position-absolute w-100 h-100"
-                            src="img/promotion.jpg"
+                            src={pizza.imageUrl}
                             style={{ objectFit: "cover" }}
                             alt="img"
                         />
-                        <button
-                            type="button"
-                            className="btn-play"
-                            data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-                            data-target="#videoModal"
-                        >
-                            <span />
-                        </button>
+                        <span />
                     </div>
                 </div>
                 <div className="col-md-6 py-5 py-md-0 px-0">
@@ -28,22 +32,24 @@ export const Details = () => {
                             className="d-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style={{ width: 100, height: 100 }}
                         >
-                            <h3 className="font-weight-bold text-secondary mb-0">$199</h3>
+                            <h3 className="font-weight-bold text-secondary mb-0">${pizza.price?.toFixed(2)}</h3>
                         </div>
                         <h3 className="font-weight-bold text-white mt-3 mb-4">
-                            Chocolate Ice Cream
+                            {pizza.name}
                         </h3>
                         <p className="text-white mb-4">
-                            Lorem justo clita dolor ipsum ut sed eos, ipsum et dolor kasd sit ea
-                            justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum
+                            {pizza.summary}
                         </p>
-                        <a href="" className="btn btn-secondary py-3 px-5 mt-2">
+                        <p className="text-white mb-4">
+                            {pizza.ingridients?.map(x => <span>{x}, </span>)}
+                        </p>
+                        <a href="/" className="btn btn-secondary py-3 px-5 mt-2">
                             Order Now
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }

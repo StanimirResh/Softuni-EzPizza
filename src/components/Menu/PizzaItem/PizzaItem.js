@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export const PizzaItem = (props) => {
     return (
@@ -19,9 +19,9 @@ export const PizzaItem = (props) => {
                     />
                 </div>
                 <h5 className="font-weight-bold mb-4">{props.pizza.name}</h5>
-                <a href="/" className="btn btn-sm btn-secondary">
+                <Link to={"/menu/basic-pizzas/" + props.pizza._id} className="btn btn-sm btn-secondary">
                     Order Now
-                </a>
+                </Link>
             </div>
         </div>
 

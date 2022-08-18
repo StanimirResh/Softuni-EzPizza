@@ -5,6 +5,7 @@ import { Login } from "../User/Login"
 import { Register } from "../User/Register"
 import { Contacts } from "../Contacts/Contacts"
 import { BasicPizzas } from "../Menu/BasicPizzas"
+import { Details } from "../Menu/Details"
 
 export const Main = () => {
     return (
@@ -16,6 +17,8 @@ export const Main = () => {
                 <Route path='/register' element={<Register />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/menu/basic-pizzas" element={<BasicPizzas />} />
+                <Route path="/menu/basic-pizzas/:pizzaId" element={<Details />} />
+
             </Routes>
         </main>
     )
