@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom"
 
 export const Home = () => {
+    const clickHandler = (e) => {
+        let linkElements = document.querySelectorAll('.nav-item');
+        linkElements.forEach(x => {
+            (x.innerText === "Our Pizzas")
+                ? x.classList.add('active')
+                : x.classList.remove('active')
+        })
+    }
     return (
         <div className="container-fluid p-0">
             <div id="header-carousel" className="carousel slide" data-ride="carousel">
@@ -15,7 +23,7 @@ export const Home = () => {
                                 <h1 className="display-3 text-white mb-md-4">
                                     Easy And Traditional Pizzas Since 2003
                                 </h1>
-                                <Link to="/" className="btn btn-primary py-md-3 px-md-5 mt-2">
+                                <Link onClick={clickHandler} to="/menu/basic-pizzas" className="btn btn-primary py-md-3 px-md-5 mt-2">
                                     Learn More
                                 </Link>
                             </div>
