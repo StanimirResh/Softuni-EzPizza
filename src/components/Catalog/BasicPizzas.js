@@ -1,13 +1,20 @@
+import { useEffect } from "react"
 import { PizzaItem } from "./PizzaItem/PizzaItem"
+import * as pizzaService from "../../services/pizzaService"
 
 export const BasicPizzas = () => {
+
+    useEffect(() => {
+        pizzaService.getAll()
+        .then(result => console.log(result))
+    })
     return (
         <div className="container-fluid py-5">
             <div className="container py-5">
                 <div className="row">
                     <div className="col-lg-6">
                         <h1 className="section-title position-relative mb-5">
-                            Best Services We Provide For Our Clients
+                            Our Best Pizzas
                         </h1>
                     </div>
                     <div className="col-lg-6 mb-5 mb-lg-0 pb-5 pb-lg-0" />
