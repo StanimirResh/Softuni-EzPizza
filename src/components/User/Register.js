@@ -44,12 +44,17 @@ export const Register = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        userService.login(userData.email, userData.password)
-            .then(result => {
-                userLogin(result)
-                navigate('/')
-            })
+        if (userData.password !== userData.repass) {
+            errors.repass = true;
+        }
 
+        if (!errors.repass) {
+            userService.register(userData.email, userData.password)
+                .then(result => {
+                    userLogin(result)
+                    navigate('/')
+                })
+        }
     }
     return (
         <div className="container">
@@ -86,6 +91,7 @@ export const Register = () => {
                                     onChange={changeHandler}
                                     onBlur={errorHandler}
                                 />
+                                {errors.email && <p className="text-black mt-3 mb-4">Your Email has to be longer than 3 characters</p>}
                             </div>
                             <div className="mb-3">
                                 <input
@@ -106,12 +112,16 @@ export const Register = () => {
                                     placeholder="Confirm Your Password"
                                     value={userData.repass}
                                     onChange={changeHandler}
-                                    onBlur={errorHandler}
                                 />
+                                {errors.password && <p className="text-black mt-3 mb-4">Password has to be longer than 3 characters</p>}
+                                {errors.repass && <p className="text-black mt-3 mb-4">Make sure the passwords match!</p>}
                             </div>
                             <div className="text-center">
-                                <button type="submit" className="btn btn-color px-5 mb-5 w-100">
-                                    Login
+                                <button
+                                    type="submit"
+                                    className="btn btn-color px-5 mb-5 w-100"
+                                    disabled={(errors.email || errors.password) ? true : false}>
+                                    Register
                                 </button>
                             </div>
                             <div id="emailHelp" className="form-text text-center mb-5 text-dark">
