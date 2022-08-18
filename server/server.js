@@ -1337,8 +1337,13 @@
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Margherita",
-                "category": "Action",
-                "ingridients": ["Tomato Sauce", "Mozarella Balls", "Fresh Basil", "Olive Oil"],
+                "price": 8.20,
+                "ingridients": [
+                    "Tomato Sauce",
+                    "Mozarella Balls",
+                    "Fresh Basil",
+                    "Olive Oil"
+                ],
                 "imageUrl": "https://cookieandkate.com/images/2021/07/margherita-pizza-recipe-1-2-768x1155.jpg",
                 "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
                 "_createdOn": 1617194128618,
@@ -1346,8 +1351,13 @@
             "1840a313-225c-416a-817a-9954d4609f7c": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Pepperoni",
-                "category": "Arcade",
-                "ingridients": ["Tomato Sauce", "Grated Mozarella", "20 Pepperoni Slices", "Fresh Oregano"],
+                "price": 10.50,
+                "ingridients": [
+                    "Tomato Sauce",
+                    "Grated Mozarella",
+                    "Pepperoni",
+                    "Fresh Oregano"
+                ],
                 "imageUrl": "https://www.simplyrecipes.com/thmb/Gld2ZPyu66Q-E23o295xDHeyBPo=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-1024x682-583b275444104ef189d693a64df625da.jpg",
                 "summary": "Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.",
                 "_createdOn": 1617194210928,
@@ -1355,16 +1365,22 @@
             "126777f5-3277-42ad-b874-76d043b069cb": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Formaggi",
-                "category": "Vertical Shooter",
-                "ingridients": ["Tomato Sauce", "Mozarella", "Gorgonzola", "Goat Cheese", "Parmigiano"],
-                "imageUrl": "/images/ZombieLang.png",
+                "price": 11.50,
+                "ingridients": [
+                    "Tomato Sauce",
+                    "Mozarella",
+                    "Gorgonzola",
+                    "Goat Cheese",
+                    "Parmigiano"
+                ],
+                "imageUrl": "https://www.insidetherustickitchen.com/wp-content/uploads/2020/07/Quattro-formaggi-pizza-square-Inside-the-rustic-kitchen.jpg",
                 "summary": "With it’s own unique story",
                 "_createdOn": 1617194295474,
             },
             "da495b32-98fd-4add-926f-0851d8a085f1": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Hawaii",
-                "category": "Action",
+                "price": 9.50,
                 "ingridients": [
                     "Tomato Sauce",
                     "Grated Mozarella",
@@ -1374,12 +1390,68 @@
                 "imageUrl": "https://www.jessicagavin.com/wp-content/uploads/2020/07/hawaiian-pizza-16-1200.jpg",
                 "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
                 "_createdOn": 1660814468230,
+            },
+            "id1": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Carpiciossa",
+                "price": 12.50,
+                "ingridients": [
+                    "Tomato Sauce",
+                    "Grated Mozarella",
+                    "Prosciutto",
+                    "Mushrooms",
+                    "Olives"
+                ],
+                "imageUrl": "https://cdn.tasteatlas.com//images/dishes/6b28b438a3b64a7e9fca9081c89f07ff.jpg?w=905&h=510",
+                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "_createdOn": 1660814468230,
+            },
+            "id2": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Seafood",
+                "price": 19.50,
+                "ingridients": [
+                    "Tomato Sauce",
+                    "Mussels",
+                    "Squid",
+                    "Shrimps"
+                ],
+                "imageUrl": "https://cdn.tasteatlas.com//images/dishes/2475b8aa94c1463dbe9dc17e0f38a063.jpg?w=905&h=510",
+                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "_createdOn": 1660814468230,
+            },
+            "id3": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Devil",
+                "price": 16,
+                "ingridients": [
+                    "Tomato Sauce",
+                    "Grated Mozarella",
+                    "Spicy Pepperoni",
+                    "Hot Chili Peppers"
+                ],
+                "imageUrl": "https://cdn.tasteatlas.com//Images/Dishes/1ade887db3a744e3a8637ef1b729d3a8.jpg?w=905&h=510",
+                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "_createdOn": 1660814468230,
+            },
+            "id4": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Garden",
+                "price": 17,
+                "ingridients": [
+                    "Tomato Sauce",
+                    "Grated Mozarella",
+                    "Fresh Green Pepper",
+                    "Fresh Tomatoes",
+                    "Mushrooms",
+                    "Black Olives",
+
+                ],
+                "imageUrl": "https://www.dominos.bg/gallery/fmobile/1295large.png",
+                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "_createdOn": 1660814468230,
             }
-
         },
-        comments: {
-
-        }
     };
     var rules$1 = {
         users: {
