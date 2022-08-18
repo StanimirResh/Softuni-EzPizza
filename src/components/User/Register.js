@@ -1,7 +1,56 @@
 import { Link } from "react-router-dom"
+import { useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import { UserContext } from "../../contexts/userContext"
+import * as userService from "../../services/userService"
+
 import "./User.css"
 
 export const Register = () => {
+    const [userData, setUserData] = useState({
+        email: "",
+        password: "",
+        repass: ""
+    })
+
+    const [errors, setErrors] = useState({
+        email: false,
+        password: false,
+        repass: false
+    })
+
+    const { userLogin } = useContext(UserContext);
+    const navigate = useNavigate();
+    const changeHandler = (e) => {
+        setUserData(oldUserData => ({
+            ...oldUserData,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const errorHandler = (e) => {
+        if (userData[e.target.name].length <= 3) {
+            setErrors(oldErrors => ({
+                ...oldErrors,
+                [e.target.name]: true
+            }))
+        } else {
+            setErrors(oldErrors => ({
+                ...oldErrors,
+                [e.target.name]: false
+            }))
+        }
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        userService.login(userData.email, userData.password)
+            .then(result => {
+                userLogin(result)
+                navigate('/')
+            })
+
+    }
     return (
         <div className="container">
             {/* <img src="https://st3.depositphotos.com/3308451/33422/i/1600/depositphotos_334221956-stock-photo-family-baby-having-pizza-party.jpg"
@@ -17,7 +66,7 @@ export const Register = () => {
                                 </h1>
                             </div>
                         </div>
-                        <form className="card-body cardbody-color p-lg-5">
+                        <form className="card-body cardbody-color p-lg-5" onSubmit={submitHandler}>
                             <div className="text-center">
                                 <img
                                     src="https://i.ibb.co/jwky4xb/EZPIZZALOGOFINAL.png"
@@ -30,9 +79,12 @@ export const Register = () => {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    name="username"
+                                    name="email"
                                     aria-describedby="emailHelp"
-                                    placeholder="Your Username"
+                                    placeholder="Your Email"
+                                    value={userData.email}
+                                    onChange={changeHandler}
+                                    onBlur={errorHandler}
                                 />
                             </div>
                             <div className="mb-3">
@@ -41,14 +93,20 @@ export const Register = () => {
                                     className="form-control"
                                     name="password"
                                     placeholder="Your Password"
+                                    value={userData.password}
+                                    onChange={changeHandler}
+                                    onBlur={errorHandler}
                                 />
                             </div>
                             <div className="mb-3">
                                 <input
                                     type="password"
                                     className="form-control"
-                                    name="repassword"
+                                    name="repass"
                                     placeholder="Confirm Your Password"
+                                    value={userData.repass}
+                                    onChange={changeHandler}
+                                    onBlur={errorHandler}
                                 />
                             </div>
                             <div className="text-center">
