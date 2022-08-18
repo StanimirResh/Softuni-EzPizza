@@ -1,25 +1,59 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import "./User.css"
 
 export const Login = () => {
+    const [userData, setUserData] = useState({
+        username: "",
+        password: ""
+    })
+
+    const [errors, setErrors] = useState({
+        username: false,
+        password: false
+    })
+
+    const changeHandler = (e) => {
+        setUserData(oldUserData => ({
+            ...oldUserData,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const errorHandler = (e) => {
+        if (userData[e.target.name].length <= 3) {
+            setErrors(oldErrors => ({
+                ...oldErrors,
+                [e.target.name]: true
+            }))
+        } else {
+            setErrors(oldErrors => ({
+                ...oldErrors,
+                [e.target.name]: false
+            }))
+        }
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        
+    }
+
     return (
         <div className="container">
-            {/* <img src="https://st3.depositphotos.com/3308451/33422/i/1600/depositphotos_334221956-stock-photo-family-baby-having-pizza-party.jpg"
-                alt="background-img"
-                className="w-100 h-100" /> */}
             <div className="row">
                 <div className="col-md-6 offset-md-3">
                     <div className="card my-5 ">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <h1 class="section-title position-relative text-center mb-5">Login</h1>
+                        <div className="row justify-content-center">
+                            <div className="col-lg-6">
+                                <h1 className="section-title position-relative text-center mb-5">Login</h1>
                             </div>
                         </div>
                         <form className="card-body cardbody-color p-lg-5">
                             <div className="text-center">
                                 <img
                                     src="https://i.ibb.co/jwky4xb/EZPIZZALOGOFINAL.png"
-                                    className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                                    className="img-fluid logo-image-pic img-thumbnail rounded-circle my-3"
                                     width="200px"
                                     alt="profile"
                                 />
@@ -31,7 +65,11 @@ export const Login = () => {
                                     name="username"
                                     aria-describedby="emailHelp"
                                     placeholder="Your Username"
+                                    value={userData.username}
+                                    onChange={changeHandler}
+                                    onBlur={errorHandler}
                                 />
+                                {errors.username && <p className="text-black mt-3 mb-4">Username has to be longer than 3 characters</p>}
                             </div>
                             <div className="mb-3">
                                 <input
@@ -39,10 +77,21 @@ export const Login = () => {
                                     className="form-control"
                                     name="password"
                                     placeholder="Your Password"
+                                    value={userData.password}
+                                    onChange={changeHandler}
+                                    onBlur={errorHandler}
                                 />
+                                {errors.password && <p className="text-black mt-3 mb-4">Password has to be longer than 3 characters</p>}
+
                             </div>
                             <div className="text-center">
-                                <button type="submit" className="btn btn-color px-5 mb-5 w-100">
+
+                                <button
+                                    id="btn"
+                                    type="submit"
+                                    className="btn btn-color px-5 mb-5 w-100"
+                                    disabled={(errors.username || errors.password) ? true : false}
+                                >
                                     Login
                                 </button>
                             </div>
@@ -56,8 +105,7 @@ export const Login = () => {
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-
+            </div >
+        </div >
     )
 }

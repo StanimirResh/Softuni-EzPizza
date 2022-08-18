@@ -4,7 +4,7 @@
     
   }
   
-  .profile-image-pic{
+  .logo-image-pic{
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -14,8 +14,4 @@
   
   .cardbody-color{
     background-color: orange;
-  }
-  
-  a{
-    text-decoration: none;
   }
