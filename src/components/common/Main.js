@@ -7,6 +7,7 @@ import { Contacts } from "../Contacts/Contacts"
 import { BasicPizzas } from "../Menu/BasicPizzas"
 import { Details } from "../Menu/Details"
 import { Logout } from "../User/Logout"
+import { CommunityPizzas } from "../Menu/CommunityPizzas"
 
 export const Main = () => {
     return (
@@ -18,6 +19,7 @@ export const Main = () => {
                 <Route path='/register' element={<Register />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/menu/basic-pizzas" element={<BasicPizzas />} />
+                <Route path="/menu/community-pizzas" element={<CommunityPizzas />} />
                 <Route path="/menu/basic-pizzas/:pizzaId" element={<Details />} />
                 <Route path="logout" element={<Logout />} />
             </Routes>

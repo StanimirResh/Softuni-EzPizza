@@ -1452,6 +1452,25 @@
                 "_createdOn": 1660814468230,
             }
         },
+        communityPizzas: {
+            "0530c65d-ce09-4e52-acbc-3fd1a554a9ac": {
+                "_ownerId": "b2de8932-ec61-48b6-965f-5558e1139390",
+                "name": "Garden",
+                "price": 17,
+                "ingridients": [
+                    "Tomato Sauce",
+                    "Grated Mozarella",
+                    "Fresh Green Pepper",
+                    "Fresh Tomatoes",
+                    "Mushrooms",
+                    "Black Olives"
+                ],
+                "imageUrl": "https://www.dominos.bg/gallery/fmobile/1295large.png",
+                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "_createdOn": 1660859182702,
+
+            }
+        }
     };
     var rules$1 = {
         users: {

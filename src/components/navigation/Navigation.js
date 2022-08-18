@@ -31,7 +31,7 @@ export const Navigation = () => {
                             </h1>
                         </Link>
                         <div className="navbar-nav mr-auto py-0">
-                            <Link to="/" className="nav-item nav-link" onClick={setActivePage}>
+                            <Link to="/menu/community-pizzas" className="nav-item nav-link" onClick={setActivePage}>
                                 Your Pizzas
                             </Link>
                             <Link to="/about" className="nav-item nav-link" onClick={setActivePage}>
