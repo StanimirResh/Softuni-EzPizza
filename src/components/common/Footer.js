@@ -16,18 +16,15 @@ export const Footer = () => {
                         </a>
                     </div>
                     <div className="col-12 mb-4">
-                        <Link className="btn btn-outline-secondary btn-social mr-2" to="/">
+                        <a className="btn btn-outline-secondary btn-social mr-2" href="https://www.facebook.com/Stanimir.Reshavski" target="_blank" rel="noreferrer">
                             <i className="fab fa-twitter" />
-                        </Link>
-                        <Link className="btn btn-outline-secondary btn-social mr-2" to="/">
+                        </a>
+                        <a className="btn btn-outline-secondary btn-social mr-2" href="https://twitter.com/stReshavski" target="_blank" rel="noreferrer">
                             <i className="fab fa-facebook-f" />
-                        </Link>
-                        <Link className="btn btn-outline-secondary btn-social mr-2" to="/">
-                            <i className="fab fa-linkedin-in" />
-                        </Link>
-                        <Link className="btn btn-outline-secondary btn-social" to="/">
+                        </a>
+                        <a className="btn btn-outline-secondary btn-social" href="https://www.instagram.com/stanimir.reshavski/" target="_blank" rel="noreferrer">
                             <i className="fab fa-instagram" />
-                        </Link>
+                        </a>
                     </div>
                     <div className="col-12 mt-2 mb-4">
                         <div className="row">

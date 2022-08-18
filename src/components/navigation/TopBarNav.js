@@ -40,21 +40,15 @@ export const TopBarNav = () => {
                     </div>
                     <div className="col-md-6 text-center text-lg-right">
                         <div className="d-inline-flex align-items-center">
-                            <Link className="text-white px-3" to="/">
+                            <a className="text-white px-3" href="https://www.facebook.com/Stanimir.Reshavski" target="_blank" rel="noreferrer">
                                 <i className="fab fa-facebook-f" />
-                            </Link>
-                            <Link className="text-white px-3" to="/">
+                            </a>
+                            <a className="text-white px-3" href="https://twitter.com/stReshavski" target="_blank" rel="noreferrer">
                                 <i className="fab fa-twitter" />
-                            </Link>
-                            <Link className="text-white px-3" to="/">
-                                <i className="fab fa-linkedin-in" />
-                            </Link>
-                            <Link className="text-white px-3" to="/">
+                            </a>
+                            <a className="text-white px-3" href="https://www.instagram.com/stanimir.reshavski/" target="_blank" rel="noreferrer">
                                 <i className="fab fa-instagram" />
-                            </Link>
-                            <Link className="text-white pl-3" to="/">
-                                <i className="fab fa-youtube" />
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

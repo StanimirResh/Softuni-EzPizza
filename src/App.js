@@ -1,7 +1,6 @@
 import { Main } from './components/common/Main';
 import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
-import { useState } from 'react';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { UserContext } from './contexts/userContext';
 
@@ -18,7 +17,7 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={{user, userLogin}}>
+    <UserContext.Provider value={{user, userLogin, userLogout}}>
       <Header />
       <Main />
       <Footer />
