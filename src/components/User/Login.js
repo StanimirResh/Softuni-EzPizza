@@ -1,5 +1,6 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useContext, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { UserContext } from "../../contexts/userContext"
 import * as userService from '../../services/userService'
 import "./User.css"
 
@@ -14,6 +15,8 @@ export const Login = () => {
         password: false
     })
 
+    const { userLogin } = useContext(UserContext);
+    const navigate = useNavigate();
     const changeHandler = (e) => {
         setUserData(oldUserData => ({
             ...oldUserData,
@@ -37,11 +40,12 @@ export const Login = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-
         userService.login(userData.email, userData.password)
-        .then(result => {
-            
-        })
+            .then(result => {
+                userLogin(result)
+                navigate('/')
+            })
+
     }
 
     return (
@@ -54,7 +58,7 @@ export const Login = () => {
                                 <h1 className="section-title position-relative text-center mb-5">Login</h1>
                             </div>
                         </div>
-                        <form className="card-body cardbody-color p-lg-5">
+                        <form className="card-body cardbody-color p-lg-5" onSubmit={submitHandler}>
                             <div className="text-center">
                                 <img
                                     src="https://i.ibb.co/jwky4xb/EZPIZZALOGOFINAL.png"
