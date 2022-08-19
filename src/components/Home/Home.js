@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 
 export const Home = () => {
-    const clickHandler = (e) => {
+    const clickHandler = (e, page) => {
         let linkElements = document.querySelectorAll('.nav-item');
         linkElements.forEach(x => {
-            (x.innerText === "Our Pizzas")
+            (x.innerText === page)
                 ? x.classList.add('active')
                 : x.classList.remove('active')
         })
@@ -23,7 +23,7 @@ export const Home = () => {
                                 <h1 className="display-3 text-white mb-md-4">
                                     Easy And Traditional Pizzas Since 2003
                                 </h1>
-                                <Link onClick={clickHandler} to="/menu/basic-pizzas" className="btn btn-primary py-md-3 px-md-5 mt-2">
+                                <Link onClick={(e) => clickHandler(e, "Our Pizzas")} to="/menu/basic-pizzas" className="btn btn-primary py-md-3 px-md-5 mt-2">
                                     Learn More
                                 </Link>
                             </div>
@@ -39,7 +39,7 @@ export const Home = () => {
                                 <h1 className="display-3 text-white mb-md-4">
                                     Pizzas with YOUR own twist
                                 </h1>
-                                <Link to="/" className="btn btn-primary py-md-3 px-md-5 mt-2">
+                                <Link onClick={(e) => clickHandler(e, "Your Pizzas")} to="/menu/community-pizzas" className="btn btn-primary py-md-3 px-md-5 mt-2">
                                     Learn More
                                 </Link>
                             </div>

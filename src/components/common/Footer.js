@@ -31,7 +31,7 @@ export const Footer = () => {
                             <div className="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
                                 <h5 className="font-weight-bold mb-2">Get In Touch</h5>
                                 <p className="mb-2">Bul. Vitosha 100, Sofia, Bulgaria</p>
-                                <p className="mb-0">+359 0888 1Pizza</p>
+                                <p className="mb-0">+359 9888 1Pizza</p>
                             </div>
                             <div className="col-sm-6 text-center text-sm-left">
                                 <h5 className="font-weight-bold mb-2">Opening Hours</h5>
