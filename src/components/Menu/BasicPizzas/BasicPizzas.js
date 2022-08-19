@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { PizzaItem } from "./PizzaItem/PizzaItem"
-import * as pizzaService from "../../services/pizzaService"
+import { PizzaItem } from "../PizzaItem/PizzaItem"
+import * as pizzaService from "../../../services/pizzaService"
 
 export const BasicPizzas = () => {
     const [pizzas, setPizzas] = useState([])
@@ -24,7 +24,7 @@ export const BasicPizzas = () => {
                 </div>
                 <div className="row">
                     {(pizzas.length > 0)
-                        ? pizzas.map(x => <PizzaItem key={x._id} pizza={x} />)
+                        ? pizzas.map(x => <PizzaItem key={x._id} pizza={x} link="basic-pizzas"/>)
                         : <div className="container row justify-content-center"><h3 >Loading...</h3></div>}
                 </div>
             </div>

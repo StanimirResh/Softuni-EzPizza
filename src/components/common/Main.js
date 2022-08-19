@@ -4,10 +4,10 @@ import { About } from '../About/About.js'
 import { Login } from "../User/Login"
 import { Register } from "../User/Register"
 import { Contacts } from "../Contacts/Contacts"
-import { BasicPizzas } from "../Menu/BasicPizzas"
-import { Details } from "../Menu/Details"
+import { BasicPizzas } from "../Menu/BasicPizzas/BasicPizzas"
+import { BasicDetails } from "../Menu/BasicPizzas/BasicDetails/BasicDetails"
 import { Logout } from "../User/Logout"
-import { CommunityPizzas } from "../Menu/CommunityPizzas"
+import { CommunityPizzas } from "../Menu/CommunityPizzas/CommunityPizzas"
 
 export const Main = () => {
     return (
@@ -20,7 +20,7 @@ export const Main = () => {
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/menu/basic-pizzas" element={<BasicPizzas />} />
                 <Route path="/menu/community-pizzas" element={<CommunityPizzas />} />
-                <Route path="/menu/basic-pizzas/:pizzaId" element={<Details />} />
+                <Route path="/menu/basic-pizzas/:pizzaId" element={<BasicDetails />} />
                 <Route path="logout" element={<Logout />} />
             </Routes>
         </main>

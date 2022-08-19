@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
-import * as pizzaService from "../../services/pizzaService"
+import * as pizzaService from "../../../../services/pizzaService"
 
-export const Details = () => {
+export const BasicDetails = () => {
     const { pizzaId } = useParams();
 
     const [pizza, setPizza] = useState({});

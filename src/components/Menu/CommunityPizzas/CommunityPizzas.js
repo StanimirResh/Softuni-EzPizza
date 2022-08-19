@@ -1,5 +1,5 @@
-import { PizzaItem } from "./PizzaItem/PizzaItem"
-import * as pizzaService from "../../services/pizzaService";
+import { PizzaItem } from "../PizzaItem/PizzaItem"
+import * as pizzaService from "../../../services/pizzaService";
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 export const CommunityPizzas = () => {
@@ -27,7 +27,7 @@ export const CommunityPizzas = () => {
                 </div>
                 <div className="row">
                     {(pizzas.length > 0)
-                    ? pizzas.map(x => <PizzaItem key={x._id} pizza={x} />)
+                    ? pizzas.map(x => <PizzaItem key={x._id} pizza={x} link="community-pizzas" />)
                     : <div className="container row justify-content-center"><h3 >Loading...</h3></div>}
                 </div>
             </div>

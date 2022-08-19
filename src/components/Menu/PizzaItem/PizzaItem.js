@@ -19,7 +19,7 @@ export const PizzaItem = (props) => {
                     />
                 </div>
                 <h5 className="font-weight-bold mb-4">{props.pizza.name}</h5>
-                <Link to={"/menu/basic-pizzas/" + props.pizza._id} className="btn btn-sm btn-secondary">
+                <Link to={"/menu/" + props.link + "/" + props.pizza._id} className="btn btn-sm btn-secondary">
                     Order Now
                 </Link>
             </div>

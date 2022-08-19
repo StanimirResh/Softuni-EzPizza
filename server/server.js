@@ -1455,20 +1455,16 @@
         communityPizzas: {
             "0530c65d-ce09-4e52-acbc-3fd1a554a9ac": {
                 "_ownerId": "b2de8932-ec61-48b6-965f-5558e1139390",
-                "name": "Garden",
-                "price": 17,
+                "name": "Among Us",
+                "price": 20,
                 "ingridients": [
                     "Tomato Sauce",
                     "Grated Mozarella",
-                    "Fresh Green Pepper",
-                    "Fresh Tomatoes",
-                    "Mushrooms",
-                    "Black Olives"
+                    "Pepperoni"
                 ],
-                "imageUrl": "https://www.dominos.bg/gallery/fmobile/1295large.png",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "imageUrl": "https://10619-2.s.cdn12.com/rests/original/110_511472539.jpg",
+                "summary": "Pizza but its in the form of the among us guy :)",
                 "_createdOn": 1660859182702,
-
             }
         }
     };
