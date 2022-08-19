@@ -33,9 +33,14 @@ export const TopBarNav = () => {
                                         Register
                                     </Link>
                                 </div>
-                                : <Link className="text-white px-3" to="/logout" onClick={clearActivePage}>
-                                    Logout
-                                </Link>}
+                                : <div>
+                                    <Link className="text-white px-3" to="/logout" onClick={clearActivePage}>
+                                        Logout
+                                    </Link>
+                                    <Link to="/cart" className="text-white px-3">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </Link>
+                                </div>}
                         </div>
                     </div>
                     <div className="col-md-6 text-center text-lg-right">

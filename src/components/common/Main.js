@@ -7,6 +7,7 @@ import { Contacts } from "../Contacts/Contacts"
 import { Menu } from "../Menu/Menu"
 import { Details } from "../Menu/Details/Details.js"
 import { Logout } from "../User/Logout"
+import { Cart } from "../Cart/Cart"
 
 export const Main = () => {
     return (
@@ -17,11 +18,12 @@ export const Main = () => {
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
                 <Route path="/contacts" element={<Contacts />} />
-                <Route path="/menu/basic-pizzas" element={<Menu database="basic-pizzas"/>} />
-                <Route path="/menu/community-pizzas" element={<Menu database="community-pizzas"/>} />
-                <Route path="/menu/basic-pizzas/:pizzaId" element={<Details database="basic-pizzas"/>} />
-                <Route path="/menu/community-pizzas/:pizzaId" element={<Details database="community-pizzas"/>} />
-                <Route path="logout" element={<Logout />} />
+                <Route path="/menu/basic-pizzas" element={<Menu database="basic-pizzas" />} />
+                <Route path="/menu/community-pizzas" element={<Menu database="community-pizzas" />} />
+                <Route path="/menu/basic-pizzas/:pizzaId" element={<Details database="basic-pizzas" />} />
+                <Route path="/menu/community-pizzas/:pizzaId" element={<Details database="community-pizzas" />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/logout" element={<Logout />} />
             </Routes>
         </main>
     )
