@@ -47,6 +47,9 @@ export const Register = () => {
         if (userData.password !== userData.repass) {
             errors.repass = true;
         }
+        else{
+            errors.repass = false;
+        }
 
         if (!errors.repass) {
             userService.register(userData.email, userData.password)

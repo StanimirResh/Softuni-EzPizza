@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { PizzaItem } from "./PizzaItem/PizzaItem"
 import * as pizzaService from "../../services/pizzaService"
+import { UserContext } from "../../contexts/userContext"
+import { Link } from "react-router-dom"
 
 export const Menu = (props) => {
     const dbName = props.database
@@ -12,13 +14,23 @@ export const Menu = (props) => {
             })
     }, [dbName])
 
+    const { user } = useContext(UserContext);
+
     return (
         <div className="container-fluid py-5">
             <div className="container py-5">
                 <div className="row justify-content-center">
+                    {(user.email && dbName === 'community-pizzas') 
+                        ? <div class="col-12 text-center">
+                            <Link to="/community-pizzas/create" class="btn btn-primary py-3 px-5">Create</Link>
+                        </div>
+                        : null}
+
                     <div className="col-lg-6">
                         <h1 className="section-title position-relative text-center mb-5">
-                            Our Best Traditional Pizzas On Good Prices
+                            {(dbName === 'basic-pizzas')
+                                ? "Our Best Traditional Pizzas On Good Prices"
+                                : "Try Random People's Creations!"}
                         </h1>
                     </div>
                 </div>
