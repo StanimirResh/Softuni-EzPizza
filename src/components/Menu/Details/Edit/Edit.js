@@ -15,7 +15,17 @@ export const Edit = (props) => {
         summary: ""
     })
 
+    const [errors, setErrors] = useState({
+        name: false,
+        price: false,
+        imageUrl: false,
+        ingridients: false,
+        summary: false,
+        invalid: false
+    })
+
     const navigate = useNavigate();
+
     useEffect(() => {
         pizzaService.getIngridients()
             .then(result => {
@@ -49,13 +59,80 @@ export const Edit = (props) => {
         }
     }
 
+    const errorHandler = (e) => {
+        if (ingridients.includes(e.target.name)) {
+            if (pizza.ingridients.length > 2) {
+                setErrors(oldErrors => ({
+                    ...oldErrors,
+                    ingridients: false
+                }))
+            } else {
+                setErrors(oldErrors => ({
+                    ...oldErrors,
+                    ingridients: true
+                }))
+            }
+        } else {
+            if (e.target.name === "price") {
+                if (pizza[e.target.name].length <= 1) {
+                    setErrors(oldErrors => ({
+                        ...oldErrors,
+                        [e.target.name]: true
+                    }))
+                } else {
+                    setErrors(oldErrors => ({
+                        ...oldErrors,
+                        [e.target.name]: false
+                    }))
+                }
+            } else if (e.target.name === "imageUrl") {
+                if (pizza[e.target.name].length <= 8) {
+                    setErrors(oldErrors => ({
+                        ...oldErrors,
+                        [e.target.name]: true
+                    }))
+                } else {
+                    setErrors(oldErrors => ({
+                        ...oldErrors,
+                        [e.target.name]: false
+                    }))
+                }
+            } else if (pizza[e.target.name]?.length <= 2) {
+                setErrors(oldErrors => ({
+                    ...oldErrors,
+                    [e.target.name]: true
+                }))
+            } else {
+                setErrors(oldErrors => ({
+                    ...oldErrors,
+                    [e.target.name]: false
+                }))
+            }
+        }
+    }
+
     const submitHandler = (e) => {
         e.preventDefault()
+        if (!isNaN(pizza.price)) {
+            setPizza(oldPizza => ({
+                ...oldPizza,
+                price: Number(oldPizza.price)
+            }))
+            pizzaService.edit(dbName, pizzaId, pizza)
+                .then(result => {
+                    setErrors(oldErrors => ({
+                        ...oldErrors,
+                        invalid: false
+                    }))
+                    navigate(`/menu/${dbName}/${result._id}`)
+                })
+        } else {
+            setErrors(oldErrors => ({
+                ...oldErrors,
+                invalid: true
+            }))
+        }
 
-        pizzaService.edit(dbName, pizzaId, pizza)
-            .then(result => {
-                navigate(`/menu/${dbName}/${result._id}`)
-            })
     }
 
 
@@ -84,8 +161,12 @@ export const Edit = (props) => {
                                             placeholder="Pizza Name"
                                             value={pizza.name}
                                             onChange={changeHandler}
+                                            onBlur={errorHandler}
                                         />
-                                        <p className="help-block text-danger" />
+                                        <p className="help-block text-danger">
+                                            {errors.name ? "Name of pizza has to be longer than two symbols"
+                                                : ""}
+                                        </p>
                                     </div>
                                     <div className="col-sm-6 control-group">
                                         <label htmlFor="price" className="ml-2">Pizza Price</label>
@@ -96,8 +177,13 @@ export const Edit = (props) => {
                                             placeholder="Price"
                                             value={pizza.price}
                                             onChange={changeHandler}
+                                            onBlur={errorHandler}
                                         />
-                                        <p className="help-block text-danger" />
+                                        <p className="help-block text-danger">
+                                            {errors.price
+                                                ? `Price of pizza has to be longer than 1 symbol (ex 8.00)`
+                                                : ""}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="control-group">
@@ -109,9 +195,14 @@ export const Edit = (props) => {
                                         placeholder="Image Url"
                                         value={pizza.imageUrl}
                                         onChange={changeHandler}
+                                        onBlur={errorHandler}
 
                                     />
-                                    <p className="help-block text-danger" />
+                                    <p className="help-block text-danger">
+                                        {errors.imageUrl
+                                            ? `ImageUrl has to be longer than 8 symbols`
+                                            : ""}
+                                    </p>
                                 </div>
                                 <div className="justify-content-center text-center">
                                     <h4>Ingridients</h4>
@@ -124,13 +215,19 @@ export const Edit = (props) => {
                                             className="form-control mr-2"
                                             style={{ width: 20, height: 20 }}
                                             name={x}
+                                            data="ingridients"
                                             checked={pizza.ingridients.includes(x) ? "on" : false}
                                             onChange={checkChangeHandler}
+                                            onBlur={errorHandler}
                                         />
                                         <label htmlFor={x} className="mr-2">{x}</label>
                                     </div>
                                 )}
-
+                                <p className="help-block text-danger">
+                                    {errors.ingridients
+                                        ? `You need to select at least 3 ingridients`
+                                        : ""}
+                                </p>
                                 <div className="control-group">
                                     <textarea
                                         className="form-control p-4"
@@ -139,16 +236,32 @@ export const Edit = (props) => {
                                         placeholder="Summary"
                                         value={pizza.summary}
                                         onChange={changeHandler}
+                                        onBlur={errorHandler}
                                     />
-                                    <p className="help-block text-danger" />
+                                    <p className="help-block text-danger">
+                                        {errors.summary
+                                            ? `Summary has to be longer than 2 symbols`
+                                            : ""}
+                                    </p>
+
                                 </div>
                                 <div>
                                     <button
                                         className="btn btn-secondary btn-block py-3 px-5"
                                         type="submit"
+                                        disabled={(errors.name ||
+                                            errors.price ||
+                                            errors.imageUrl ||
+                                            errors.ingridients ||
+                                            errors.summary) ? true : false}
                                     >
                                         Edit
                                     </button>
+                                    <p className="help-block text-danger">
+                                        {errors.invalid
+                                            ? `Some data was invalid! (Make sure price is a number!)`
+                                            : ""}
+                                    </p>
                                 </div>
                             </form>
                         </div>

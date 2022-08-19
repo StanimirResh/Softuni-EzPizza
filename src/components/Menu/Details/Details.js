@@ -35,7 +35,7 @@ export const Details = (props) => {
                                 className="d-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                                 style={{ width: 100, height: 100, marginLeft: "40%" }}
                             >
-                                <h3 className="font-weight-bold text-secondary mb-0">${pizza.price?.toFixed(2)}</h3>
+                                <h3 className="font-weight-bold text-secondary mb-0">${Number(pizza.price)?.toFixed(2)}</h3>
                             </div>
                             <h3 className="font-weight-bold text-white mt-3 mb-4">
                                 {pizza.name}
