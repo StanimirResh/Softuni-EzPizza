@@ -1333,7 +1333,7 @@
         }
     };
     var seedData = {
-        pizzas: {
+        "basic-pizzas": {
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Margherita",
@@ -1452,7 +1452,7 @@
                 "_createdOn": 1660814468230,
             }
         },
-        communityPizzas: {
+        "community-pizzas": {
             "0530c65d-ce09-4e52-acbc-3fd1a554a9ac": {
                 "_ownerId": "b2de8932-ec61-48b6-965f-5558e1139390",
                 "name": "Among Us",

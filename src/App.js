@@ -3,6 +3,7 @@ import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { UserContext } from './contexts/userContext';
+import React from 'react';
 
 function App() {
   const [user, setUser] = useLocalStorage('user', {})
@@ -17,7 +18,7 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={{user, userLogin, userLogout}}>
+    <UserContext.Provider value={{ user, userLogin, userLogout }}>
       <Header />
       <Main />
       <Footer />

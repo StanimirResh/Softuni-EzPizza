@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
-import * as pizzaService from "../../../../services/pizzaService"
+import * as pizzaService from "../../../services/pizzaService"
 
-export const BasicDetails = () => {
+export const Details = (props) => {
     const { pizzaId } = useParams();
 
     const [pizza, setPizza] = useState({});
-
-    const dbName = 'pizzas'
+    const dbName = props.database
 
     useEffect(() => {
         pizzaService.getOne(dbName, pizzaId)
             .then(result => setPizza(result))
-    })
+    },[dbName, pizzaId])
 
     return (
         <div className="container-fluid my-5 py-5 px-0">
