@@ -7,3 +7,5 @@ export const getAll = (db) => request.get(`${baseUrl}/${db}`)
 export const getOne = (db, pizzaId) => request.get(`${baseUrl}${db}/${pizzaId}`)
 
 export const getIngridients = () => request.get(`${baseUrl}ingridients`)
+
+export const edit = (db, pizzaId, pizza) => request.put(`${baseUrl}${db}/${pizzaId}`, pizza)

@@ -44,7 +44,7 @@ export const Details = (props) => {
                                 {pizza.summary}
                             </p>
                             <p className="text-white mb-4">
-                                {pizza.ingridients?.map(x => <span key={x}>{x}, </span>)}
+                                {pizza.ingridients?.map(x => <span key={x}>{x} </span>)}
                             </p>
                             {(user._id === pizza._ownerId)
                                 ? <>

@@ -21,8 +21,8 @@ export const Menu = (props) => {
             <div className="container py-5">
                 <div className="row justify-content-center">
                     {(user.email && dbName === 'community-pizzas') 
-                        ? <div class="col-12 text-center">
-                            <Link to="/community-pizzas/create" class="btn btn-primary py-3 px-5">Create</Link>
+                        ? <div className="col-12 text-center">
+                            <Link to="/community-pizzas/create" className="btn btn-primary py-3 px-5">Create</Link>
                         </div>
                         : null}
 

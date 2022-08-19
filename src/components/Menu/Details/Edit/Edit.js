@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import * as pizzaService from "../../../../services/pizzaService"
 export const Edit = (props) => {
     const dbName = props.database
     const { pizzaId } = useParams();
+
     const [ingridients, setIngridients] = useState([])
+
     const [pizza, setPizza] = useState({
-        name:"",
-        price:"",
-        imageUrl:"",
+        name: "",
+        price: "",
+        imageUrl: "",
         ingridients: [],
         summary: ""
     })
 
+    const navigate = useNavigate();
     useEffect(() => {
         pizzaService.getIngridients()
             .then(result => {
@@ -25,6 +28,35 @@ export const Edit = (props) => {
             })
     }, [dbName, pizzaId])
 
+    const changeHandler = (e) => {
+        setPizza(oldPizza => ({
+            ...oldPizza,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const checkChangeHandler = (e) => {
+        if (pizza.ingridients.includes(e.target.name)) {
+            setPizza(oldPizza => ({
+                ...oldPizza,
+                ingridients: oldPizza.ingridients.filter(x => x !== e.target.name)
+            }))
+        } else {
+            setPizza(oldPizza => ({
+                ...oldPizza,
+                ingridients: [...oldPizza.ingridients, e.target.name]
+            }))
+        }
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+
+        pizzaService.edit(dbName, pizzaId, pizza)
+            .then(result => {
+                navigate(`/menu/${dbName}/${result._id}`)
+            })
+    }
 
 
     return (
@@ -41,7 +73,7 @@ export const Edit = (props) => {
                     <div className="col-lg-9">
                         <div className="contact-form bg-primary rounded p-5">
                             <div id="success" />
-                            <form name="sentMessage" id="contactForm" noValidate="novalidate">
+                            <form name="sentMessage" id="contactForm" onSubmit={submitHandler}>
                                 <div className="form-row">
                                     <div className="col-sm-6 control-group">
                                         <label htmlFor="name" className="ml-2">Pizza Name</label>
@@ -51,6 +83,7 @@ export const Edit = (props) => {
                                             name="name"
                                             placeholder="Pizza Name"
                                             value={pizza.name}
+                                            onChange={changeHandler}
                                         />
                                         <p className="help-block text-danger" />
                                     </div>
@@ -62,6 +95,7 @@ export const Edit = (props) => {
                                             name="price"
                                             placeholder="Price"
                                             value={pizza.price}
+                                            onChange={changeHandler}
                                         />
                                         <p className="help-block text-danger" />
                                     </div>
@@ -74,21 +108,24 @@ export const Edit = (props) => {
                                         name="imageUrl"
                                         placeholder="Image Url"
                                         value={pizza.imageUrl}
+                                        onChange={changeHandler}
+
                                     />
                                     <p className="help-block text-danger" />
                                 </div>
                                 <div className="justify-content-center text-center">
                                     <h4>Ingridients</h4>
                                 </div>
-                                {ingridients?.map(x =>
-                                    <div className="control-group flex"
+                                {ingridients?.map((x, i) =>
+                                    <div key={i} className="control-group flex"
                                         style={{ display: "inline-flex", width: 200 }}>
                                         <input
                                             type="checkbox"
                                             className="form-control mr-2"
                                             style={{ width: 20, height: 20 }}
                                             name={x}
-                                            checked={pizza.ingridients.includes(x) ? true : false}
+                                            checked={pizza.ingridients.includes(x) ? "on" : false}
+                                            onChange={checkChangeHandler}
                                         />
                                         <label htmlFor={x} className="mr-2">{x}</label>
                                     </div>
@@ -98,9 +135,10 @@ export const Edit = (props) => {
                                     <textarea
                                         className="form-control p-4"
                                         rows={6}
-                                        name="message"
+                                        name="summary"
                                         placeholder="Summary"
                                         value={pizza.summary}
+                                        onChange={changeHandler}
                                     />
                                     <p className="help-block text-danger" />
                                 </div>
@@ -108,9 +146,8 @@ export const Edit = (props) => {
                                     <button
                                         className="btn btn-secondary btn-block py-3 px-5"
                                         type="submit"
-                                        id="sendMessageButton"
                                     >
-                                        Send Message
+                                        Edit
                                     </button>
                                 </div>
                             </form>
