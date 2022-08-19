@@ -16,7 +16,8 @@ export const Register = () => {
     const [errors, setErrors] = useState({
         email: false,
         password: false,
-        repass: false
+        repass: false,
+        invalid: false
     })
 
     const { userLogin } = useContext(UserContext);
@@ -47,23 +48,30 @@ export const Register = () => {
         if (userData.password !== userData.repass) {
             errors.repass = true;
         }
-        else{
+        else {
             errors.repass = false;
         }
 
         if (!errors.repass) {
             userService.register(userData.email, userData.password)
                 .then(result => {
+                    setErrors(oldErrors => ({
+                        ...oldErrors,
+                        invalid: false
+                    }))
                     userLogin(result)
                     navigate('/')
+                })
+                .catch(err => {
+                    setErrors(oldErrors => ({
+                        ...oldErrors,
+                        invalid: true
+                    }))
                 })
         }
     }
     return (
         <div className="container">
-            {/* <img src="https://st3.depositphotos.com/3308451/33422/i/1600/depositphotos_334221956-stock-photo-family-baby-having-pizza-party.jpg"
-                alt="background-img"
-                className="w-100 h-100" /> */}
             <div className="row">
                 <div className="col-md-6 offset-md-3">
                     <div className="card my-5">
@@ -118,6 +126,8 @@ export const Register = () => {
                                 />
                                 {errors.password && <p className="text-black mt-3 mb-4">Password has to be longer than 3 characters</p>}
                                 {errors.repass && <p className="text-black mt-3 mb-4">Make sure the passwords match!</p>}
+                                {errors.invalid && <p className="text-black mt-3 mb-4">Invalid email or password</p>}
+                                
                             </div>
                             <div className="text-center">
                                 <button
