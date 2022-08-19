@@ -1321,13 +1321,13 @@
     var protectedData = {
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
-                email: "peter@abv.bg",
+                email: "admin@abv.bg",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
-                email: "john@abv.bg",
+                email: "peter@abv.bg",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
-            }
+            },
         },
         sessions: {
         }
@@ -1345,7 +1345,7 @@
                     "Olive Oil"
                 ],
                 "imageUrl": "https://cookieandkate.com/images/2021/07/margherita-pizza-recipe-1-2-768x1155.jpg",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "summary": "One of the simplest but still most favorable and tasty pizzas out there - The Margherita!",
                 "_createdOn": 1617194128618,
             },
             "1840a313-225c-416a-817a-9954d4609f7c": {
@@ -1359,7 +1359,7 @@
                     "Fresh Oregano"
                 ],
                 "imageUrl": "https://www.simplyrecipes.com/thmb/Gld2ZPyu66Q-E23o295xDHeyBPo=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-1024x682-583b275444104ef189d693a64df625da.jpg",
-                "summary": "Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.",
+                "summary": "The traditional pepperoni pizza. You can never go wrong with it!",
                 "_createdOn": 1617194210928,
             },
             "126777f5-3277-42ad-b874-76d043b069cb": {
@@ -1374,7 +1374,7 @@
                     "Parmigiano"
                 ],
                 "imageUrl": "https://www.insidetherustickitchen.com/wp-content/uploads/2020/07/Quattro-formaggi-pizza-square-Inside-the-rustic-kitchen.jpg",
-                "summary": "With it’s own unique story",
+                "summary": "Cheese on top of cheese, on top of cheese, on top of cheese. We all know you love it",
                 "_createdOn": 1617194295474,
             },
             "da495b32-98fd-4add-926f-0851d8a085f1": {
@@ -1388,7 +1388,7 @@
                     "Pineapple"
                 ],
                 "imageUrl": "https://www.jessicagavin.com/wp-content/uploads/2020/07/hawaiian-pizza-16-1200.jpg",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "summary": "Some people hate it, some live it. Personally its one of our favorites!",
                 "_createdOn": 1660814468230,
             },
             "id1": {
@@ -1403,7 +1403,7 @@
                     "Olives"
                 ],
                 "imageUrl": "https://cdn.tasteatlas.com//images/dishes/6b28b438a3b64a7e9fca9081c89f07ff.jpg?w=905&h=510",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "summary": "One of the most famous italian recipes ever. Every flavour you might ever want",
                 "_createdOn": 1660814468230,
             },
             "id2": {
@@ -1417,7 +1417,7 @@
                     "Shrimps"
                 ],
                 "imageUrl": "https://cdn.tasteatlas.com//images/dishes/2475b8aa94c1463dbe9dc17e0f38a063.jpg?w=905&h=510",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "summary": "Bringing pizza and delicious seafood into one",
                 "_createdOn": 1660814468230,
             },
             "id3": {
@@ -1431,7 +1431,7 @@
                     "Hot Chili Peppers"
                 ],
                 "imageUrl": "https://cdn.tasteatlas.com//Images/Dishes/1ade887db3a744e3a8637ef1b729d3a8.jpg?w=905&h=510",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "summary": "This pizza is guaranteed to make you hot!",
                 "_createdOn": 1660814468230,
             },
             "id4": {
@@ -1448,13 +1448,13 @@
 
                 ],
                 "imageUrl": "https://www.dominos.bg/gallery/fmobile/1295large.png",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
+                "summary": "Everything a vegatarian would dream of!",
                 "_createdOn": 1660814468230,
             }
         },
         "community-pizzas": {
             "0530c65d-ce09-4e52-acbc-3fd1a554a9ac": {
-                "_ownerId": "b2de8932-ec61-48b6-965f-5558e1139390",
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "name": "Among Us",
                 "price": 20,
                 "ingridients": [

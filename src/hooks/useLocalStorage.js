@@ -15,7 +15,11 @@ export const useLocalStorage = (key, defValue) => {
     const setLocalStorageVal = (newValue) => {
         localStorage.setItem(key, JSON.stringify(newValue));
 
-        setValue(newValue);
+        setValue({
+            email: newValue.email,
+            _id: newValue._id,
+            accessToken: newValue.accessToken
+        });
     }
 
     return [
