@@ -8,6 +8,7 @@ import { BasicPizzas } from "../Menu/BasicPizzas/BasicPizzas"
 import { BasicDetails } from "../Menu/BasicPizzas/BasicDetails/BasicDetails"
 import { Logout } from "../User/Logout"
 import { CommunityPizzas } from "../Menu/CommunityPizzas/CommunityPizzas"
+import {CommunityDetails} from "../Menu/CommunityPizzas/CommunityDetails/CommunityDetails"
 
 export const Main = () => {
     return (
@@ -21,6 +22,7 @@ export const Main = () => {
                 <Route path="/menu/basic-pizzas" element={<BasicPizzas />} />
                 <Route path="/menu/community-pizzas" element={<CommunityPizzas />} />
                 <Route path="/menu/basic-pizzas/:pizzaId" element={<BasicDetails />} />
+                <Route path="/menu/community-pizzas/:pizzaId" element={<CommunityDetails />} />
                 <Route path="logout" element={<Logout />} />
             </Routes>
         </main>

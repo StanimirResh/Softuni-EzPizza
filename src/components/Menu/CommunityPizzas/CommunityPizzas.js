@@ -14,8 +14,8 @@ export const CommunityPizzas = () => {
 
     return (
         <div className="container-fluid py-5">
-                <div class="col-12 text-center">
-                    <a href="/" class="btn btn-primary py-3 px-5">CREATE</a>
+                <div className="col-12 text-center">
+                    <a href="/" className="btn btn-primary py-3 px-5">CREATE</a>
                 </div>
             <div className="container py-5">
                 <div className="row justify-content-center">

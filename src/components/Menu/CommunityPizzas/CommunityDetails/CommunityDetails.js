@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import * as pizzaService from "../../../../services/pizzaService"
 
-export const BasicDetails = () => {
+export const CommunityDetails = () => {
     const { pizzaId } = useParams();
 
     const [pizza, setPizza] = useState({});
 
-    const dbName = 'pizzas'
+    const dbName = 'communityPizzas'
 
     useEffect(() => {
         pizzaService.getOne(dbName, pizzaId)
@@ -43,7 +43,7 @@ export const BasicDetails = () => {
                             {pizza.summary}
                         </p>
                         <p className="text-white mb-4">
-                            {pizza.ingridients?.map(x => <span>{x}, </span>)}
+                            {pizza.ingridients?.map(x => <span key={x}>{x}, </span>)}
                         </p>
                         <a href="/" className="btn btn-secondary py-3 px-5 mt-2">
                             Order Now
