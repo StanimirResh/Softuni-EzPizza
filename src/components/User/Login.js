@@ -12,7 +12,8 @@ export const Login = () => {
 
     const [errors, setErrors] = useState({
         email: false,
-        password: false
+        password: false,
+        invalid: false
     })
 
     const { userLogin } = useContext(UserContext);
@@ -42,8 +43,18 @@ export const Login = () => {
         e.preventDefault();
         userService.login(userData.email, userData.password)
             .then(result => {
+                setErrors(oldErrors => ({
+                    ...oldErrors,
+                    invalid: false
+                }))
                 userLogin(result)
                 navigate('/')
+            })
+            .catch(() => {
+                setErrors(oldErrors => ({
+                    ...oldErrors,
+                    invalid: true
+                }))
             })
 
     }
@@ -91,6 +102,7 @@ export const Login = () => {
                                     onBlur={errorHandler}
                                 />
                                 {errors.password && <p className="text-black mt-3 mb-4">Password has to be longer than 3 characters</p>}
+                                {errors.invalid && <p className="text-black mt-3 mb-4">Invalid email or password</p>}
 
                             </div>
                             <div className="text-center">

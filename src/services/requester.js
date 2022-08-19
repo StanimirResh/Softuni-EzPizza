@@ -13,19 +13,27 @@ const request = async (method, url, data) => {
     if (method === 'GET') {
         buildRequest = fetch(url, { headers })
     } else {
-        buildRequest = fetch(url, {
-            method,
-            headers: {
-                ...headers,
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
+        try {
+            buildRequest = fetch(url, {
+                method,
+                headers: {
+                    ...headers,
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+        } catch (err) {
+            console.log('test');
+        }
     }
 
     const response = await buildRequest;
+    if (!response.ok) {
+        throw new Error()
+    }
     const result = await response.json();
     return result;
+
 }
 
 
