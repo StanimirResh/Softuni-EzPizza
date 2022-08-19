@@ -1333,6 +1333,13 @@
         }
     };
     var seedData = {
+        "ingridients": [
+            "Tomato Sauce", "Mozarella", "Gorgonzola", "Goat Cheese", "Parmigiano",
+            "Pepperoni", "Ham", "Prosciutto", "Mushrooms", "Olives", "Mussels", "Squid", "Shrimps",
+            "Pineapple", "Bananas", "Spicy Pepperoni", "Hot Chili Peppers", "Fresh Basil",
+            "Olive Oil", "Fresh Oregano", "Fresh Green Pepper", "Fresh Tomatoes", "Black Olives",
+        ]
+        ,
         "basic-pizzas": {
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1340,7 +1347,7 @@
                 "price": 8.20,
                 "ingridients": [
                     "Tomato Sauce",
-                    "Mozarella Balls",
+                    "Mozarella",
                     "Fresh Basil",
                     "Olive Oil"
                 ],
@@ -1354,7 +1361,7 @@
                 "price": 10.50,
                 "ingridients": [
                     "Tomato Sauce",
-                    "Grated Mozarella",
+                    "Mozarella",
                     "Pepperoni",
                     "Fresh Oregano"
                 ],
@@ -1383,7 +1390,7 @@
                 "price": 9.50,
                 "ingridients": [
                     "Tomato Sauce",
-                    "Grated Mozarella",
+                    "Mozarella",
                     "Ham",
                     "Pineapple"
                 ],
@@ -1397,7 +1404,7 @@
                 "price": 12.50,
                 "ingridients": [
                     "Tomato Sauce",
-                    "Grated Mozarella",
+                    "Mozarella",
                     "Prosciutto",
                     "Mushrooms",
                     "Olives"
@@ -1426,7 +1433,7 @@
                 "price": 16,
                 "ingridients": [
                     "Tomato Sauce",
-                    "Grated Mozarella",
+                    "Mozarella",
                     "Spicy Pepperoni",
                     "Hot Chili Peppers"
                 ],
@@ -1440,7 +1447,7 @@
                 "price": 17,
                 "ingridients": [
                     "Tomato Sauce",
-                    "Grated Mozarella",
+                    "Mozarella",
                     "Fresh Green Pepper",
                     "Fresh Tomatoes",
                     "Mushrooms",
@@ -1459,7 +1466,7 @@
                 "price": 20,
                 "ingridients": [
                     "Tomato Sauce",
-                    "Grated Mozarella",
+                    "Mozarella",
                     "Pepperoni"
                 ],
                 "imageUrl": "https://10619-2.s.cdn12.com/rests/original/110_511472539.jpg",
