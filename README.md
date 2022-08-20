@@ -4,6 +4,10 @@ For it to work you need to:
 #### Turn on the server
 
 ### use `node server.js` while in the server folder
+The server is not made by me. It is the SoftUni Practice Server (with little modifications by me)!
+The reason i used it is because of deadlines and simply not having enough time to do my own
+p.s. that could change if you check the project in the near future
+
 
 ## Available Scripts
 
