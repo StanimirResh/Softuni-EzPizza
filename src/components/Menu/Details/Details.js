@@ -58,7 +58,7 @@ export const Details = (props) => {
                                 : null}
                         </div>
                         <div className="align-items-center justify-content-center text-center">
-                            <Link to="/" className="btn btn-secondary py-3 px-5 mt-2">
+                            <Link to="/cart" className="btn btn-secondary py-3 px-5 mt-2">
                                 Order Now
                             </Link>
                         </div>

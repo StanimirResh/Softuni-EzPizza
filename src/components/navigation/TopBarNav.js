@@ -20,9 +20,10 @@ export const TopBarNav = () => {
                 <div className="row">
                     <div className="col-md-6 text-center text-lg-left mb-2 mb-lg-0" onClick={clearActivePage}>
                         <div className="d-inline-flex align-items-center">
-                            <Link className="text-white px-3" to="/contacts" onClick={clearActivePage}>
-                                Contacts
-                            </Link>
+                            {user.email && <p className="text-white px-3 mt-3" style={{textDecoration:"none"}}>
+                                {user.email}
+                            </p>}
+
                             {!user.email
                                 ? <div>
                                     <Link className="text-white px-3" to="/login">

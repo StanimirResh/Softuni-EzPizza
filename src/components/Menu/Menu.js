@@ -25,6 +25,13 @@ export const Menu = (props) => {
                             <Link to="/menu/community-pizzas/create" className="btn btn-primary py-3 px-5">Create</Link>
                         </div>
                         : null}
+                    {((user.email === 'admin@abv.bg') && (dbName === 'basic-pizzas'))
+                        ? <div className="col-12 text-center">
+                            <Link to="/menu/basic-pizzas/create" className="btn btn-primary py-3 px-5">Create</Link>
+                        </div>
+                        : null
+                    }
+
 
                     <div className="col-lg-6">
                         <h1 className="section-title position-relative text-center mb-5">
