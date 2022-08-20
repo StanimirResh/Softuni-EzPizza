@@ -3,6 +3,8 @@
 For it to work you need to: 
 #### Turn on the server
 
+### use `node server.js` while in the server folder
+
 ## Available Scripts
 
 In the project directory, you can run:
