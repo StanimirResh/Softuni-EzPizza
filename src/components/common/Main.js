@@ -9,6 +9,7 @@ import { Details } from "../Menu/Details/Details.js"
 import { Logout } from "../User/Logout"
 import { Cart } from "../Cart/Cart"
 import { Edit } from "../Menu/Details/Edit/Edit"
+import { Create } from "../Menu/Create/Create"
 
 export const Main = () => {
     return (
@@ -24,6 +25,7 @@ export const Main = () => {
                 <Route path="/menu/basic-pizzas/:pizzaId" element={<Details database="basic-pizzas" />} />
                 <Route path="/menu/community-pizzas/:pizzaId" element={<Details database="community-pizzas" />} />
                 <Route path="/menu/community-pizzas/:pizzaId/edit" element={<Edit database="community-pizzas" />} />
+                <Route path="/menu/community-pizzas/create" element={<Create database="community-pizzas" />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/logout" element={<Logout />} />
             </Routes>

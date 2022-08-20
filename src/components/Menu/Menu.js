@@ -22,7 +22,7 @@ export const Menu = (props) => {
                 <div className="row justify-content-center">
                     {(user.email && dbName === 'community-pizzas') 
                         ? <div className="col-12 text-center">
-                            <Link to="/community-pizzas/create" className="btn btn-primary py-3 px-5">Create</Link>
+                            <Link to="/menu/community-pizzas/create" className="btn btn-primary py-3 px-5">Create</Link>
                         </div>
                         : null}
 
