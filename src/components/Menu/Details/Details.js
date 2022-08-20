@@ -51,7 +51,7 @@ export const Details = (props) => {
                                     <Link to="edit" className="btn mr-1 ml-1 btn-secondary py-3 px-5 mt-2">
                                         Edit
                                     </Link>
-                                    <Link to="/" className="btn mr-1 ml-1 btn-secondary py-3 px-5 mt-2">
+                                    <Link to="delete" className="btn mr-1 ml-1 btn-secondary py-3 px-5 mt-2">
                                         Delete
                                     </Link>
                                 </>
