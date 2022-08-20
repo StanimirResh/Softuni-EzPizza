@@ -11,6 +11,12 @@ p.s. that could change if you check the project in the near future
 ## 2.Turn on the application 
 ### use `npm start`
 
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
