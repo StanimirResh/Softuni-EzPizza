@@ -8,7 +8,9 @@ The server is not made by me. It is the SoftUni Practice Server (with little mod
 The reason i used it is because of deadlines and simply not having enough time to do my own
 p.s. that could change if you check the project in the near future
 
-## 2.Turn on the application with the `npm start` command
+## 2.Turn on the application 
+### use `npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
