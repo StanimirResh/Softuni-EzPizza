@@ -1,6 +1,7 @@
 # Welcome to my project
 
-For it to work you need to: [Create React App](https://github.com/facebook/create-react-app).
+For it to work you need to: 
+#### Turn on the server
 
 ## Available Scripts
 
