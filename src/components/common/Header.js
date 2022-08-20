@@ -1,5 +1,5 @@
-import { TopBarNav } from "../Navigation/TopBarNav"
-import { Navigation } from "../Navigation/Navigation"
+import { TopBarNav } from "../Navigate/TopBarNav"
+import { Navigation } from "../Navigate/Navigation"
 
 export const Header = () => {
     return (
