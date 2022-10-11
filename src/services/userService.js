@@ -1,6 +1,6 @@
 import * as request from './requester'
 
-const baseUrl = "http://localhost:3030/users"
+const baseUrl = window.location.origin + "/users"
 
 export const login = async (email, password) => {
     const response = await request.post(`${baseUrl}/login`, { email, password })

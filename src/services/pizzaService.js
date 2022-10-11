@@ -1,6 +1,6 @@
 import * as request from './requester'
 
-const baseUrl = 'http://localhost:3030/data'
+const baseUrl = window.location.origin + "/data"
 
 export const getAll = (db) => request.get(`${baseUrl}/${db}`)
 
