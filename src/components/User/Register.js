@@ -85,10 +85,10 @@ export const Register = () => {
                         <form className="card-body cardbody-color p-lg-5" onSubmit={submitHandler}>
                             <div className="text-center">
                                 <img
-                                    src="https://i.ibb.co/jwky4xb/EZPIZZALOGOFINAL.png"
+                                    src="https://i.ibb.co/SyBCXJg/EZPIZZALOGOFINAL.png"
                                     className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                                     width="200px"
-                                    alt="profile"
+                                    alt="logo"
                                 />
                             </div>
                             <div className="mb-3">
